@@ -1,23 +1,50 @@
 
-const button = document.getElementById('button');
 
-function formDate(date) {
+function formatDate(date) {
 
-    let time = new Date() - date;
+    let time = new Date() - date; // разница в миллисекундах
 
-    console.log(time);
+    console.log(time)
 
-    let now1 = new Date((new Date(-1)));
+    if (time < 1000) {
+        return 'прямо сейчас';
+    }
 
-    console.log(now1);
+    let sec = time / 1000;
+
+    if (sec < 60) {
+        return sec + ' сек. назад';
+    }
+
+    let min = time / 60000;
+
+    if (min < 60) {
+        return min + ' мин. назад';
+    }
 
 
+    let d = date;
+    d = [
+        '0' + d.getDate(),
+        '0' + (d.getMonth() + 1),
+        '' + d.getFullYear(),
+        '0' + d.getHours(),
+        '0' + d.getMinutes()
+    ].map(component => component.slice(-2));
 
-    document.getElementById('time1').innerHTML = `${now1}`;
-    document.getElementById('time2').innerHTML = `${firstname}`;
-    document.getElementById('time3').innerHTML = `${unknowname}`;
-    document.getElementById('time4').innerHTML = `${unknowname}`;
+    return d.slice(0, 3).join('.') + ' ' + d.slice(3).join(':');
+
 
 }
 
-button.addEventListener('click', formDate());
+
+alert(formatDate(new Date(new Date - 1)));
+
+
+alert(formatDate(new Date(new Date - 30 * 1000)));
+
+alert(formatDate(new Date(new Date - 5 * 60 * 1000)));
+
+alert(formatDate(new Date(new Date - 86400 * 1000)));
+
+
