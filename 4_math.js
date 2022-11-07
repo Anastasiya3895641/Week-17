@@ -19,6 +19,11 @@ function showResult() {
 
     document.write("Случайное число равно: " + arr.toString());
 
+    for (i = 0; i < arr.length; i++) {
+        const sum = arr.reduce((a, b) => a + b);
+        arr.push(sum);
+    };
+
     document.write("  Минимальное число: " + Math.min.apply(null, arr));
 
     document.write("  Максимальное число: " + Math.max.apply(null, arr));
