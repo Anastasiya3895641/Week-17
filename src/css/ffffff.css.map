@@ -1,10 +1,1 @@
-{
-    "version": 3,
-    "sources": [
-        "../../ffffff.sass",
-        "ffffff.css"
-    ],
-    "names": [],
-    "mappings": "AAAA;EACI,cAAA;ACCJ",
-    "file": "ffffff.css"
-}
+{"version":3,"sources":["../../ffffff.sass"],"names":[],"mappings":"AAMA,OAJI,UAAA,CACA,WAAA,CACA,wBAAA,CAIA,aACI,aATK","file":"ffffff.css"}
